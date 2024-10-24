@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let radius;
     const particles = [];
-    let numParticles = window.innerWidth > 1020 ? 3000 : 500;
+    let numParticles = window.innerWidth > 1020 ? 3000 : 200;
     const colors = [
         { r: 0, g: 255, b: 200 },
         { r: 255, g: 0, b: 128 },
@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const maxDistance = radius * 1.2;
             const normalizedDistance = distance / maxDistance;
             const alpha = Math.max(0, 1 - normalizedDistance);
-            const size = projected.scale * 2.8;
+            const size = projected.scale * (window.innerWidth > 1020 ? 2.8 : 10);
 
             const gradient = ctx.createRadialGradient(
                 projected.x, projected.y, 0,
