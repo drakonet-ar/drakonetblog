@@ -124,9 +124,6 @@ document.addEventListener('DOMContentLoaded', () => {
         0 0 30px rgb(${color.r}, ${color.g}, ${color.b})
     `;
         header.style.filter = `drop-shadow(2px 2px 10px rgb(${color.r}, ${color.g}, ${color.b}))`;
-        containerInfo1.style.filter = `drop-shadow(2px 2px 10px rgb(${color.r}, ${color.g}, ${color.b}))`;
-        containerInfo2.style.filter = `drop-shadow(2px 2px 10px rgb(${color.r}, ${color.g}, ${color.b}))`;
-        containerInfo3.style.filter = `drop-shadow(2px 2px 10px rgb(${color.r}, ${color.g}, ${color.b}))`;
         indicador1.style.filter = `drop-shadow(2px 2px 10px rgb(${color.r}, ${color.g}, ${color.b}))`;
         indicador2.style.filter = `drop-shadow(2px 2px 10px rgb(${color.r}, ${color.g}, ${color.b}))`;
         footer.style.filter = `drop-shadow(2px 2px 10px rgb(${color.r}, ${color.g}, ${color.b}))`;
