@@ -169,6 +169,14 @@ const content = document.querySelector('.content');
                 });
             
                 linkhome.addEventListener('click', function() {
+                    if(!containerInfo3.classList.contains('desaparecer-container-info-up')){
+                        containerInfo3.classList.add('desaparecer-container-info-up');
+                        containerInfo3.classList.remove('center');
+                        linknewsletter.classList.remove('active');
+                        linkhome.classList.add('active');
+                        linknewsletter.style.color = '#ffff';
+                        linknewsletter.style.textShadow = 'none';
+                    }
                     if(!containerInfo2.classList.contains('desaparecer-container-info-right')&&!containerInfo1.classList.contains('desaparecer-container-info-left')){
                         containerInfo2.classList.add('desaparecer-container-info-right');
                         containerInfo1.classList.add('desaparecer-container-info-left');
