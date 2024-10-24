@@ -9,8 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const linksmedia = document.querySelectorAll('#social-media a');
     const abouttitle = document.getElementById('about-tittle');
     const contactttitle = document.getElementById('contact-tittle');
-    const indicador1 = document.getElementById('inidicador1');
-    const indicador2 = document.getElementById('inidicador2');
+   // const indicador1 = document.getElementById('inidicador1');
+   // const indicador2 = document.getElementById('inidicador2');
 
 
 
@@ -121,8 +121,8 @@ document.addEventListener('DOMContentLoaded', () => {
         0 0 30px rgb(${color.r}, ${color.g}, ${color.b})
     `;
         header.style.filter = `drop-shadow(2px 2px 10px rgb(${color.r}, ${color.g}, ${color.b}))`;
-        indicador1.style.filter = `drop-shadow(2px 2px 10px rgb(${color.r}, ${color.g}, ${color.b}))`;
-        indicador2.style.filter = `drop-shadow(2px 2px 10px rgb(${color.r}, ${color.g}, ${color.b}))`;
+      //  indicador1.style.filter = `drop-shadow(2px 2px 10px rgb(${color.r}, ${color.g}, ${color.b}))`;
+      //  indicador2.style.filter = `drop-shadow(2px 2px 10px rgb(${color.r}, ${color.g}, ${color.b}))`;
         footer.style.filter = `drop-shadow(2px 2px 10px rgb(${color.r}, ${color.g}, ${color.b}))`;
         botonnewsletter.style.background = `rgb(${color.r}, ${color.g}, ${color.b})`;
         linksmedia.forEach(linkmedia => {
