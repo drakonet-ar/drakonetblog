@@ -589,6 +589,9 @@ footer {
     .container-info{
         width: 25%;
     }
+    #typing-text{
+        font-size: 1em;
+    }
 }
 
 
