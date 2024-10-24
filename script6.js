@@ -7,11 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const footer = document.getElementById('main-footer');
     const botonnewsletter = document.getElementById('buttom-newsletter');
     const linksmedia = document.querySelectorAll('#social-media a');
-    
-    
-    
-
-
 
     function resizeCanvas() {
         canvas.width = window.innerWidth;
@@ -60,26 +55,20 @@ document.addEventListener('DOMContentLoaded', () => {
             };
         }
     }
-    let radius; // Declarar fuera para tener acceso en todo el ámbito
+
+    let radius;
     const particles = [];
-    const numParticles = 3000;
+    let numParticles = window.innerWidth > 1020 ? 3000 : 1000;
     const colors = [
-        { r: 0, g: 255, b: 200 },    // Turquoise
-        { r: 255, g: 0, b: 128 },    // Pink
-        { r: 128, g: 0, b: 255 },    // Purple
-        { r: 0, g: 128, b: 255 },    // Blue
-        { r: 0, g: 255, b: 128 }     // Green
+        { r: 0, g: 255, b: 200 },
+        { r: 255, g: 0, b: 128 },
+        { r: 128, g: 0, b: 255 },
+        { r: 0, g: 128, b: 255 },
+        { r: 0, g: 255, b: 128 }
     ];
-    
-    if (window.innerWidth > 1020) {
-        radius = 280; // Asignar valor si el ancho es mayor a 1020px
-    } else {
-        radius = 200; // Asignar valor si el ancho es menor o igual a 1020px
-    }
-    
-    // Aquí puedes usar radius, particles, numParticles y colors
-    console.log(radius); // Ejemplo de uso
-    
+
+    radius = window.innerWidth > 1020 ? 280 : 200;
+
     for (let i = 0; i < numParticles; i++) {
         const theta = Math.random() * Math.PI * 2;
         const phi = Math.acos((Math.random() * 2) - 1);
@@ -120,20 +109,17 @@ document.addEventListener('DOMContentLoaded', () => {
         botonnewsletter.style.background = `rgb(${color.r}, ${color.g}, ${color.b})`;
 
         linksmedia.forEach(linkmedia => {
+            const originalColor = window.getComputedStyle(linkmedia).color; // Obtener el color original
             linkmedia.addEventListener('mouseover', () => {
-                // Cambia el color del ícono al pasar el mouse
                 linkmedia.style.color = `rgb(${color.r}, ${color.g}, ${color.b})`;
             });
-        
+
             linkmedia.addEventListener('mouseout', () => {
-                // Vuelve al color original cuando se sale el mouse
-                linkmedia.style.color = ''; // Puedes ajustar el color original aquí si es necesario
+                linkmedia.style.color = originalColor; // Restaurar el color original
             });
         });
 
-        // Cambia el text-shadow y el color para cada enlace
         links.forEach(link => {
-            // Verifica si el enlace tiene la clase 'active' al cargar la página
             if (link.classList.contains('active')) {
                 link.style.textShadow = `
                     0 0 10px rgb(${color.r}, ${color.g}, ${color.b}),
@@ -142,18 +128,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 `;
                 link.style.color = `rgb(${color.r}, ${color.g}, ${color.b})`; 
             }
-    
+
             link.addEventListener('mouseout', () => {
-                // Solo elimina el text-shadow y el color si el enlace no tiene la clase 'active'
                 if (!link.classList.contains('active')) {
                     link.style.textShadow = 'none';
-                    link.style.color = ''; // Restablecer el color a su valor original
+                    link.style.color = ''; 
                 }
             });
         });
     }
-    
-
 
     function animate() {
         const currentTime = Date.now();
@@ -163,7 +146,6 @@ document.addEventListener('DOMContentLoaded', () => {
             isReversing = !isReversing;
             startTime = currentTime;
         }
-
 
         ctx.fillStyle = '#07090c';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -181,7 +163,6 @@ document.addEventListener('DOMContentLoaded', () => {
             colorTransition
         );
 
-        // Update title shadow with current color
         updateTitleShadow(currentColor);
 
         particles.sort((a, b) => b.z - a.z);

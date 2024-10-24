@@ -1,14 +1,5 @@
 const content = document.querySelector('.content');
-        const containerInfo1 = document.getElementById('container-info1');
-        const containerInfo2 = document.getElementById('container-info2');
-        
-        
-        if (window.innerWidth > 1020) {
-            containerInfo1.classList.remove('appear-container');
-            containerInfo2.classList.remove('appear-container');
-            containerInfo1.classList.add('disapear-container-left');
-            containerInfo2.classList.add('disapear-container-right');
-        }
+
 
         // ***************************************************************************************************************************************************************************
         // Header visibility
