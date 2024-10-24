@@ -27,6 +27,13 @@ canvas {
     font-family: Arial, sans-serif;
 }
 
+.logo{
+    width: 3%;
+    position: absolute;
+    left: 2%;
+    margin-top: 0.5%;
+}
+
 h1 {
     font-size: 3em;
     font-family: 'Poppins', sans-serif;
@@ -344,6 +351,14 @@ footer {
         animation: growTitle2 3s ease forwards; 
     }
 
+    .logo{
+        width: 14%;
+        position: relative;
+        margin-left: 80%;
+        margin-top: -50%;
+        margin-bottom: 10px;
+    }
+
     @keyframes growTitle2 {
         0% {
             font-size: 0.1em; /* Comienza muy pequeño */
@@ -394,6 +409,7 @@ footer {
 
     .burger-menu {
         display: block;
+        margin-top: 5%;
     }
 
     #main-header nav {
