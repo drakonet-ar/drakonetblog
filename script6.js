@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let radius;
     const particles = [];
-    let numParticles = window.innerWidth > 1020 ? 3000 : 1000;
+    let numParticles = window.innerWidth > 1020 ? 3000 : 500;
     const colors = [
         { r: 0, g: 255, b: 200 },
         { r: 255, g: 0, b: 128 },
