@@ -77,13 +77,13 @@ const content = document.querySelector('.content');
             updateHeaderVisibility({ clientY: 0 });
         });
         
-        const indicador1 = document.getElementById('inidicador1');
-        const indicador2 = document.getElementById('inidicador2');
+        //const indicador1 = document.getElementById('inidicador1');
+        //const indicador2 = document.getElementById('inidicador2');
 
-        if (window.innerWidth <= 1020) {
-            indicador2.style.opacity = '0';
-            indicador1.style.opacity = '0';
-        }
+        //if (window.innerWidth <= 1020) {
+        //    indicador2.style.opacity = '0';
+        //    indicador1.style.opacity = '0';
+        //}
 
         if(window.innerWidth > 1020){
 
@@ -115,8 +115,8 @@ const content = document.querySelector('.content');
                 const rightBoundary = screenWidth * 0.9; // 20% de la pantalla desde la derecha
                 const flecha1  = document.getElementById('flecha1');
                 const flecha2  = document.getElementById('flecha2');
-                const indicador1 = document.getElementById('inidicador1');
-                const indicador2 = document.getElementById('inidicador2');
+                //const indicador1 = document.getElementById('inidicador1');
+                //const indicador2 = document.getElementById('inidicador2');
                 const containerInfo3 = document.getElementById('container-info3');
                 const linknewsletter = document.getElementById('newsletter');
 
@@ -140,10 +140,10 @@ const content = document.querySelector('.content');
                 }
                 if(!containerInfo2.classList.contains('desaparecer-container-info-right')||!containerInfo3.classList.contains('desaparecer-container-info-up')){
                     flecha2.style.opacity = '0';
-                    indicador2.style.opacity = '0';
+                    //indicador2.style.opacity = '0';
                 }else{
                     flecha2.style.opacity = '1';
-                    indicador2.style.opacity = '1';
+                    //indicador2.style.opacity = '1';
                 }
             
                 linkabout.addEventListener('click', function() {
