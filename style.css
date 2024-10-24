@@ -1,5 +1,4 @@
 
-html,
 body {
     margin: 0;
     overflow-y: auto;
@@ -290,21 +289,17 @@ footer {
     }
 
     #container-info1{
-        margin-top: 1300px;
-        left: 5%;
+        margin-top: 1300px!important;
+        left: 5%!important;
     }
 
     #container-info2{
-        margin-top: 2600px;
-        right: 5%;
+        margin-top: 2600px!important;
+        right: 5%!important;
     }
 
     .glass {
         background: linear-gradient(#fff2, rgba(255,255,255,0.1) );
-        border: 1px solid rgba(255,255,255,0.1);
-        box-shadow: 0 25px 25px rgba(0, 0, 0, 0.25);
-        backdrop-filter: blur(10px);
-        border-radius: 10px;
     }
 
     .burger-menu {
