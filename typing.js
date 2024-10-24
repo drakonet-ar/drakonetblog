@@ -1,7 +1,7 @@
 
 // Typing animation for About section
 const typingText = document.getElementById('typing-text');
-const textToType = "Hello! I'm a passionate web developer with a keen interest in creating innovative and user-friendly digital experiences. With a strong foundation in front-end technologies and a growing expertise in back-end development, I'm always eager to take on new challenges and push the boundaries of what's possible on the web. I'm currently seeking opportunities to collaborate on exciting projects that make a positive impact. Whether it's a startup looking for a dedicated developer or an established company in need of fresh perspectives, I'm ready to bring my skills and enthusiasm to the table.";
+const textToType = "En Drakonet, somos una comunidad apasionada por la tecnología y la innovación. Nacimos con una misión clara: ayudar a los desarrolladores a alcanzar su máximo potencial. Todo comenzó cuando Leandro Bellone, frustrado por la falta de recursos útiles, decidió cambiar las reglas del juego. Sabía que el desarrollo web es más que código: es crear experiencias y resolver problemas reales. Pero vimos cómo muchos se quedaban atrapados sin las herramientas necesarias para avanzar.Por eso cree Drakonet, un espacio donde los desarrolladores pueden aprender, mejorar y crecer. Más allá de los recursos, creemos en el poder de la colaboración y en el impacto que tiene una web bien diseñada. Nuestro compromiso es con cada desarrollador que busca llevar sus habilidades al siguiente nivel, ayudándoles a crear páginas web más rápidas, seguras y efectivas.En Drakonet, no solo compartimos conocimiento, sino que construimos una comunidad donde todos pueden crecer juntos.";
 
 let charIndex = 0;
 
