@@ -28,10 +28,7 @@ canvas {
 }
 
 .logo{
-    width: 3%!important;
-    position: absolute;
-    left: 2%;
-    margin-top: 0.5%;
+    display:none;
 }
 
 h1 {
@@ -352,6 +349,7 @@ footer {
     }
 
     .logo{
+        display:block;
         width: 14%;
         position: relative;
         margin-left: 80%;
