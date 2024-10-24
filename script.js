@@ -9,9 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const linksmedia = document.querySelectorAll('#social-media a');
     const abouttitle = document.getElementById('about-tittle');
     const contactttitle = document.getElementById('contact-tittle');
-    const containerInfo1 = document.getElementById('container-info1');
-    const containerInfo2 = document.getElementById('container-info2');
-    const containerInfo3 = document.getElementById('container-info3');
     const indicador1 = document.getElementById('inidicador1');
     const indicador2 = document.getElementById('inidicador2');
 
@@ -128,7 +125,6 @@ document.addEventListener('DOMContentLoaded', () => {
         indicador2.style.filter = `drop-shadow(2px 2px 10px rgb(${color.r}, ${color.g}, ${color.b}))`;
         footer.style.filter = `drop-shadow(2px 2px 10px rgb(${color.r}, ${color.g}, ${color.b}))`;
         botonnewsletter.style.background = `rgb(${color.r}, ${color.g}, ${color.b})`;
-
         linksmedia.forEach(linkmedia => {
             const originalColor = window.getComputedStyle(linkmedia).color; // Obtener el color original
             linkmedia.addEventListener('mouseover', () => {
