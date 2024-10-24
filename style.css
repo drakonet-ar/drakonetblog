@@ -28,7 +28,7 @@ canvas {
 }
 
 .logo{
-    width: 3%;
+    width: 3%!important;
     position: absolute;
     left: 2%;
     margin-top: 0.5%;
