@@ -1,0 +1,351 @@
+body {
+    margin: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: #07090c;
+}
+
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+canvas {
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.content {
+    position: absolute;
+    z-index: 2;
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    font-size: 3em;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 10px;
+    text-align: center;
+    white-space: nowrap;
+    transition: text-shadow 0.3s ease;
+    animation: growTitle 3s ease forwards; 
+}
+
+@keyframes growTitle {
+    0% {
+        font-size: 0.1em; /* Comienza muy pequeño */
+    }
+    100% {
+        font-size: 3em; /* Termina en 3em */
+    }
+}
+
+.glass {
+    background: linear-gradient(#fff2, transparent);
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 25px 25px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    transition: 0.7s ease-in-out;
+}
+
+.container-info {
+    width: 20%;
+    height: 80%;
+    position: absolute;
+    z-index: 10;
+    margin-top: 5%;
+}
+
+.appear-container{
+    margin-top: 1300px;
+}
+
+
+/* Configuración de transición para un movimiento suave */
+#container-info1, #container-info2 {
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    position: absolute;
+}
+
+#container-info1{
+    left: 2%;
+}
+
+#container-info2{
+    right: 2%;
+}
+
+/* Cuando el mouse está sobre el área izquierda */
+.left {
+    transform: translateX(0); /* Muestra el div en su posición */
+    opacity: 1; /* Asegúrate de que sea completamente visible */
+}
+
+/* Cuando el mouse está sobre el área derecha */
+.right {
+    transform: translateX(0); /* Muestra el div en su posición */
+    opacity: 1;
+}
+
+/* Desaparecer hacia la izquierda */
+.desaparecer-container-info-left {
+    transform: translateX(-100%); /* Desaparece hacia la izquierda */
+    opacity: 0; /* Reduce la opacidad a 0 */
+}
+
+/* Desaparecer hacia la derecha */
+.desaparecer-container-info-right {
+    transform: translateX(100%); /* Desaparece hacia la derecha */
+    opacity: 0;
+}
+
+.hover-pointer {
+    cursor: pointer;
+}
+
+#main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 100;
+    transition: transform 0.3s ease-in-out;
+    filter: drop-shadow(2px 2px 10px #00ff00);
+}
+
+#main-header.hidden {
+    transform: translateY(-100%);
+}
+
+#main-header nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#main-header nav ul li {
+    margin: 0 15px;
+}
+
+#main-header nav ul li a {
+    display: block;
+    padding: 15px 10px;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-align: center;
+    white-space: nowrap;
+    transition: color 0.3s ease-in-out;
+}
+
+#main-header nav ul li a:hover{
+    filter: drop-shadow(2px 2px 10px #ffff);
+}
+
+
+.burger-menu {
+    display: none;
+    cursor: pointer;
+    padding: 15px;
+}
+
+.burger-icon {
+    width: 30px;
+    height: 20px;
+    position: relative;
+}
+
+.burger-icon span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: #fff;
+    border-radius: 3px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+}
+
+.burger-icon span:nth-child(1) {
+    top: 0px;
+}
+
+.burger-icon span:nth-child(2) {
+    top: 8px;
+}
+
+.burger-icon span:nth-child(3) {
+    top: 16px;
+}
+
+.burger-menu.open .burger-icon span:nth-child(1) {
+    top: 8px;
+    transform: rotate(135deg);
+}
+
+.burger-menu.open .burger-icon span:nth-child(2) {
+    opacity: 0;
+    left: -60px;
+}
+
+.burger-menu.open .burger-icon span:nth-child(3) {
+    top: 8px;
+    transform: rotate(-135deg);
+}
+
+
+/*************************************************************************************************/
+footer {
+    position: absolute;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px 0;
+    z-index: 10;
+    margin-top: 50px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.social-media a {
+    color: #fff;
+    font-size: 24px;
+    margin-right: 20px;
+    transition: color 0.3s ease-in-out;
+}
+
+.social-media a:hover {
+    transition: 0.5s ease-in-out;
+    filter: drop-shadow(2px 2px 10px #ffff);
+}
+
+#newsletter-form {
+    display: flex;
+}
+
+#newsletter-form input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+#newsletter-form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    color: #000;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    font-family: 'Poppins', sans-serif;
+}
+
+#buttom-newsletter:hover{
+    filter: drop-shadow(2px 2px 10px #ffff);
+}
+
+/***************************************************************************************************************************************/
+
+@media (max-width: 1020px) {
+
+
+    h1{
+        animation: growTitle2 3s ease forwards; 
+    }
+
+    @keyframes growTitle2 {
+        0% {
+            font-size: 0.1em; /* Comienza muy pequeño */
+        }
+        100% {
+            font-size: 2em; /* Termina en 3em */
+        }
+    }
+
+
+    .container-info {
+        width: 90%;
+    }
+
+    #container-info1{
+        margin-top: 1300px;
+        left: 5%;
+    }
+
+    #container-info2{
+        margin-top: 2600px;
+        right: 5%;
+    }
+
+    .glass {
+        background: linear-gradient(#fff2, rgba(255,255,255,0.1) );
+        border: 1px solid rgba(255,255,255,0.1);
+        box-shadow: 0 25px 25px rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(10px);
+        border-radius: 10px;
+    }
+
+    .burger-menu {
+        display: block;
+    }
+
+    #main-header nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    #main-header nav.open {
+        display: block;
+    }
+
+    #main-header nav ul {
+        flex-direction: column;
+    }
+
+    #main-header nav ul li {
+        margin: 0;
+    }
+
+    #main-header nav ul li a {
+        padding: 15px;
+        text-align: center;
+    }
+
+    footer {
+        margin-top: 1300px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .social-media {
+        margin-bottom: 20px;
+    }
+
+}
