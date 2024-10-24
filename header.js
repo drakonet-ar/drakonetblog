@@ -77,16 +77,217 @@ const content = document.querySelector('.content');
             updateHeaderVisibility({ clientY: 0 });
         });
 
-        // ***************************************************************************************************************************************************************************
-        // Smooth scrolling for nav links
-        let currentSection = 0; // Inicializar currentSection
-        navLinks.forEach((link, index) => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                currentSection = index;
-                content.scrollTo({
-                    top: currentSection * window.innerHeight,
-                    behavior: 'smooth'
+
+        if(window.innerWidth > 1020){
+
+            window.onload = function() {
+                console.log("La página ha cargado completamente");
+                const containerInfo1 = document.getElementById('container-info1');
+                const containerInfo2 = document.getElementById('container-info2');
+            
+                if (window.innerWidth > 1020) {
+                    containerInfo1.classList.add('desaparecer-container-info-left');
+                    containerInfo2.classList.add('desaparecer-container-info-right');
+                }
+            };
+            
+            
+            document.addEventListener('mousemove', function(event) {
+                const screenWidth = window.innerWidth;
+                const mouseX = event.clientX;
+                const cross1  = document.getElementById('cross1');
+                const cross2  = document.getElementById('cross2');
+                const linkhome = document.getElementById('home');
+                const linkabout = document.getElementById('about');
+                const linkcontact = document.getElementById('contact');
+                const linknewsletter = document.getElementById('newsletter');
+                const containerInfo1 = document.getElementById('container-info1');
+                const containerInfo2 = document.getElementById('container-info2');
+                const leftBoundary = screenWidth * 0.1; // 20% de la pantalla desde la izquierda
+                const rightBoundary = screenWidth * 0.9; // 20% de la pantalla desde la derecha
+            
+                linkabout.addEventListener('click', function() {
+                    if(containerInfo1.classList.contains('desaparecer-container-info-left')){
+                        containerInfo1.classList.remove('desaparecer-container-info-left');
+                        containerInfo1.classList.add('left');
+                    }
+                });
+            
+                linkcontact.addEventListener('click', function() {
+                    if(containerInfo2.classList.contains('desaparecer-container-info-right')){
+                        containerInfo2.classList.remove('desaparecer-container-info-right');
+                        containerInfo2.classList.add('right');
+                    }
+                });
+            
+                linkhome.addEventListener('click', function() {
+                    if(!containerInfo2.classList.contains('desaparecer-container-info-right')&&!containerInfo1.classList.contains('desaparecer-container-info-left')){
+                        containerInfo2.classList.add('desaparecer-container-info-right');
+                        containerInfo1.classList.add('desaparecer-container-info-left');
+                        containerInfo2.classList.remove('right');
+                        containerInfo1.classList.remove('left');
+                        linkabout.classList.remove('active');
+                        linkhome.classList.add('active');
+                        linkcontact.classList.remove('active');
+                        linknewsletter.classList.remove('active');
+                        linkabout.style.color = '#ffff';
+                        linkcontact.style.color = '#ffff';
+                        linknewsletter.style.color = '#ffff';
+                        linkabout.style.textShadow = 'none';
+                        linknewsletter.style.textShadow = 'none';
+                        linkcontact.style.textShadow = 'none';
+                    }else{
+                        if(!containerInfo2.classList.contains('desaparecer-container-info-right')&&containerInfo1.classList.contains('desaparecer-container-info-left')){
+                            containerInfo2.classList.add('desaparecer-container-info-right');
+                            containerInfo2.classList.remove('right');
+                            linkabout.classList.remove('active');
+                            linkhome.classList.add('active');
+                            linkcontact.classList.remove('active');
+                            linknewsletter.classList.remove('active');
+                            linkabout.style.color = '#ffff';
+                            linkcontact.style.color = '#ffff';
+                            linknewsletter.style.color = '#ffff';
+                            linkabout.style.textShadow = 'none';
+                            linknewsletter.style.textShadow = 'none';
+                            linkcontact.style.textShadow = 'none';
+                        }else{
+                            if(containerInfo2.classList.contains('desaparecer-container-info-right')&&!containerInfo1.classList.contains('desaparecer-container-info-left')){
+                                containerInfo1.classList.add('desaparecer-container-info-left');
+                                containerInfo1.classList.remove('left');
+                                linkabout.classList.remove('active');
+                                linkhome.classList.add('active');
+                                linkcontact.classList.remove('active');
+                                linknewsletter.classList.remove('active');
+                                linkabout.style.color = '#ffff';
+                                linkcontact.style.color = '#ffff';
+                                linknewsletter.style.color = '#ffff';
+                                linkabout.style.textShadow = 'none';
+                                linknewsletter.style.textShadow = 'none';
+                                linkcontact.style.textShadow = 'none';
+                            }
+                        }
+                    }
+                });
+            
+                if(!containerInfo1.classList.contains('desaparecer-container-info-left')&&!containerInfo2.classList.contains('desaparecer-container-info-right')){
+                    linkabout.classList.add('active');
+                    linkhome.classList.remove('active');
+                    linkcontact.classList.add('active');
+                    linknewsletter.classList.remove('active');
+                    linkhome.style.color = '#ffff';
+                    linknewsletter.style.color = '#ffff';
+                    linkhome.style.textShadow = 'none';
+                    linknewsletter.style.textShadow = 'none';
+                }else{
+                    if(!containerInfo1.classList.contains('desaparecer-container-info-left')&&containerInfo2.classList.contains('desaparecer-container-info-right')){
+                        linkabout.classList.add('active');
+                        linkhome.classList.remove('active');
+                        linkcontact.classList.remove('active');
+                        linknewsletter.classList.remove('active');
+                        linkhome.style.color = '#ffff';
+                        linknewsletter.style.color = '#ffff';
+                        linkcontact.style.color = '#ffff';
+                        linkhome.style.textShadow = 'none';
+                        linknewsletter.style.textShadow = 'none';
+                        linkcontact.style.textShadow = 'none';
+                    }else{
+                        if(containerInfo1.classList.contains('desaparecer-container-info-left')&&containerInfo2.classList.contains('desaparecer-container-info-right')){
+                            linkabout.classList.remove('active');
+                            linkhome.classList.add('active');
+                            linkcontact.classList.remove('active');
+                            linknewsletter.classList.remove('active');
+                            linkabout.style.color = '#ffff';
+                            linknewsletter.style.color = '#ffff';
+                            linkcontact.style.color = '#ffff';
+                            linkabout.style.textShadow = 'none';
+                            linknewsletter.style.textShadow = 'none';
+                            linkcontact.style.textShadow = 'none';
+                    }
+                    else{
+                        if(containerInfo1.classList.contains('desaparecer-container-info-left')&&!containerInfo2.classList.contains('desaparecer-container-info-right')){
+                            linkabout.classList.remove('active');
+                            linkhome.classList.remove('active');
+                            linkcontact.classList.add('active');
+                            linknewsletter.classList.remove('active');
+                            linkabout.style.color = '#ffff';
+                            linknewsletter.style.color = '#ffff';
+                            linkhome.style.color = '#ffff';
+                            linkabout.style.textShadow = 'none';
+                            linknewsletter.style.textShadow = 'none';
+                            linkhome.style.textShadow = 'none';
+                        }
+                    }
+                }
+            }
+            
+
+            
+                // Mostrar el contenedor de la izquierda
+                if (mouseX < leftBoundary) {
+                    containerInfo1.classList.remove('desaparecer-container-info-left');
+                    containerInfo1.classList.add('left');
+                } 
+                cross1.addEventListener('click', function() {
+                    containerInfo1.classList.remove('left');
+                    // Solo añadir la clase de desaparición si no la tiene
+                    if (!containerInfo1.classList.contains('desaparecer-container-info-left')) {
+                        containerInfo1.classList.add('desaparecer-container-info-left');
+                    }
+                });
+            
+                // Mostrar el contenedor de la derecha
+                if (mouseX > rightBoundary) {
+                    containerInfo2.classList.remove('desaparecer-container-info-right');
+                    containerInfo2.classList.add('right');
+                } 
+                cross2.addEventListener('click', function() {
+                    containerInfo2.classList.remove('right');
+                    if (!containerInfo2.classList.contains('desaparecer-container-info-right')) {
+                        containerInfo2.classList.add('desaparecer-container-info-right');
+                    }
                 });
             });
+            }
+
+
+// Verifica el ancho de la ventana
+if (window.innerWidth <= 1020) {
+    const linkhome = document.getElementById('home');
+    const linkabout = document.getElementById('about');
+    const linkcontact = document.getElementById('contact');
+    const linknewsletter = document.getElementById('newsletter');
+    const containerInfo1 = document.getElementById('container-info1');
+    const containerInfo2 = document.getElementById('container-info2');
+
+    // Ajuste en píxeles para el scroll
+    const offset = 100; // Cambia este valor según sea necesario
+    const offset2 = 2000;
+    // Función para hacer scroll suave con ajuste
+    function smoothScroll(target) {
+        const targetPosition = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
         });
+    }
+
+    // Evento para el enlace "about"
+    linkabout.addEventListener('click', function(event) {
+        event.preventDefault(); // Previene el comportamiento predeterminado del enlace
+        smoothScroll(containerInfo1); // Scroll hacia containerInfo1
+    });
+
+    // Evento para el enlace "contact"
+    linkcontact.addEventListener('click', function(event) {
+        event.preventDefault(); // Previene el comportamiento predeterminado del enlace
+        smoothScroll(containerInfo2); // Scroll hacia containerInfo2
+    });
+
+    // Evento para el enlace "home"
+    linkhome.addEventListener('click', function(event) {
+        event.preventDefault(); // Previene el comportamiento predeterminado del enlace
+        window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll hacia arriba
+    });
+}
+
+

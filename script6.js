@@ -105,7 +105,9 @@ document.addEventListener('DOMContentLoaded', () => {
             0 0 30px rgb(${color.r}, ${color.g}, ${color.b})
         `;
         header.style.filter = `drop-shadow(2px 2px 10px rgb(${color.r}, ${color.g}, ${color.b}))`;
-        footer.style.filter = `drop-shadow(2px 2px 10px rgb(${color.r}, ${color.g}, ${color.b}))`;
+        if (window.innerWidth > 1020) {
+            footer.style.filter = `drop-shadow(2px 2px 10px rgb(${color.r}, ${color.g}, ${color.b}))`;
+        }
         botonnewsletter.style.background = `rgb(${color.r}, ${color.g}, ${color.b})`;
 
         linksmedia.forEach(linkmedia => {

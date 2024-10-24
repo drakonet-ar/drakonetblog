@@ -1,4 +1,4 @@
-
+html,
 body {
     margin: 0;
     overflow-y: auto;
@@ -80,6 +80,7 @@ h1 {
 
 #container-info2{
     right: 2%;
+    width: 30%!important;
 }
 
 /* Cuando el mouse está sobre el área izquierda */
@@ -94,6 +95,7 @@ h1 {
     opacity: 1;
 }
 
+
 /* Desaparecer hacia la izquierda */
 .desaparecer-container-info-left {
     transform: translateX(-100%); /* Desaparece hacia la izquierda */
@@ -106,9 +108,23 @@ h1 {
     opacity: 0;
 }
 
-.hover-pointer {
+#cross1{
+    position: absolute;
+    right: 2%;
+    top: 2%;
+    width: 5%;
     cursor: pointer;
 }
+
+
+#cross2{
+    position: absolute;
+    left: 2%;
+    top: 2%;
+    width: 5%;
+    cursor: pointer;
+}
+
 
 #main-header {
     position: fixed;
@@ -148,6 +164,7 @@ h1 {
     text-align: center;
     white-space: nowrap;
     transition: color 0.3s ease-in-out;
+    cursor: pointer;
 }
 
 #main-header nav ul li a:hover{
@@ -290,16 +307,31 @@ footer {
 
     #container-info1{
         margin-top: 1300px!important;
-        left: 5%!important;
+        left: 5%;
     }
 
     #container-info2{
         margin-top: 2600px!important;
-        right: 5%!important;
+        width: 90%!important;
+        right: 5%;
+    }
+
+    #cross1{
+        opacity: 0;
+        z-index: -10;
+    }
+    
+    #cross2{
+        opacity: 0;
+        z-index: -10;
     }
 
     .glass {
         background: linear-gradient(#fff2, rgba(255,255,255,0.1) );
+        border: 1px solid rgba(255,255,255,0.1);
+        box-shadow: 0 25px 25px rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(10px);
+        border-radius: 10px;
     }
 
     .burger-menu {
