@@ -6,6 +6,34 @@ body {
     background: #07090c;
 }
 
+/* Estilos generales para el scrollbar */
+::-webkit-scrollbar {
+    width: 12px; /* Ancho de la barra de desplazamiento */
+}
+
+/* Estilos para el track (fondo del scrollbar) */
+::-webkit-scrollbar-track {
+    background: linear-gradient(#fff2, transparent); /* Fondo translúcido */
+    border-radius: 10px; /* Bordes redondeados */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Borde suave */
+    box-shadow: 0 25px 25px rgba(0, 0, 0, 0.25); /* Sombra similar a tu clase glass */
+}
+
+/* Estilos para el thumb (la parte que se arrastra) */
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3); /* Color translúcido */
+    border-radius: 10px; /* Bordes redondeados */
+    backdrop-filter: blur(5px); /* Efecto de desenfoque en el thumb */
+    border: 2px solid rgba(0, 0, 0, 0.4); /* Borde más oscuro */
+    transition: background 0.3s ease-in-out; /* Transición suave en el color */
+}
+
+/* Hover sobre el thumb */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5); /* Color más claro al hacer hover */
+}
+
+
 main{
     display: flex;
     align-items: center;
