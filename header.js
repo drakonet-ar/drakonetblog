@@ -92,10 +92,9 @@ const content = document.querySelector('.content');
                 const containerInfo1 = document.getElementById('container-info1');
                 const containerInfo2 = document.getElementById('container-info2');
             
-                if (window.innerWidth > 1020) {
-                    containerInfo1.classList.add('desaparecer-container-info-left');
-                    containerInfo2.classList.add('desaparecer-container-info-right');
-                }
+                containerInfo1.classList.add('desaparecer-container-info-left');
+                containerInfo2.classList.add('desaparecer-container-info-right');
+                
             };
             
 
@@ -332,6 +331,7 @@ if (window.innerWidth <= 1020) {
     const linknewsletter = document.getElementById('newsletter');
     const containerInfo1 = document.getElementById('container-info1');
     const containerInfo2 = document.getElementById('container-info2');
+    const containerInfo3 = document.getElementById('container-info3');
 
     // Ajuste en píxeles para el scroll
     const offset = 80; // Cambia este valor según sea necesario
@@ -356,14 +356,17 @@ if (window.innerWidth <= 1020) {
         smoothScroll(containerInfo2); // Scroll hacia containerInfo2
     });
 
+    // Evento para el enlace "newsletter"
+    linknewsletter.addEventListener('click', function(event) {
+        event.preventDefault(); // Previene el comportamiento predeterminado del enlace
+        smoothScroll(containerInfo3); // Scroll hacia containerInfo2
+    });
+
     // Evento para el enlace "home"
     linkhome.addEventListener('click', function(event) {
         event.preventDefault(); // Previene el comportamiento predeterminado del enlace
         window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll hacia arriba
     });
-
-
-
 
 }
 
