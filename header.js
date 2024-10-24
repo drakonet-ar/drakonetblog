@@ -133,10 +133,10 @@ const content = document.querySelector('.content');
 
                 if(!containerInfo1.classList.contains('desaparecer-container-info-left')||!containerInfo3.classList.contains('desaparecer-container-info-up')){
                     flecha1.style.opacity = '0';
-                    indicador1.style.opacity = '0';
+                    //indicador1.style.opacity = '0';
                 }else{
                     flecha1.style.opacity = '1';
-                    indicador1.style.opacity = '1';
+                    //indicador1.style.opacity = '1';
                 }
                 if(!containerInfo2.classList.contains('desaparecer-container-info-right')||!containerInfo3.classList.contains('desaparecer-container-info-up')){
                     flecha2.style.opacity = '0';
