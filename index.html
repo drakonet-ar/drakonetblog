@@ -33,9 +33,33 @@
             <h1>DRAKONET</h1>
         </div>
         <i id="flecha1" class="fas fa-chevron-right flecha1"></i>
+        <h3 id="inidicador1" class="inidicador1">About Us</h3>
         <i id="flecha2" class="fas fa-chevron-left flecha2"></i>
+        <h3 id="inidicador2" class="inidicador2">Contact</h3>
         <div id="container-info1" class="glass container-info appear-container"><i id="cross1" class="fas fa-times"></i><h2 id="about-tittle">About Us</h2><p id="typing-text"></p></div>
-        <div id="container-info2" class="glass container-info appear-container"><i id="cross2" class="fas fa-times"></i></div>
+        <div id="container-info2" class="glass container-info appear-container"><i id="cross2" class="fas fa-times"></i>
+            <div class="container2">
+                <div class="form2">
+                    <h2 data-section="form" data-value="Contacto" id="contact-tittle">Contacto</h2>
+                    <form id="miFormulario" action="https://formspree.io/f/xgvewovd" method="POST">
+                        <div class="inputBx">
+                            <input id="input-contacto1" name="nombre" data-section="menu" type="text" placeholder="Nombre completo" required>
+                        </div>
+                        <div class="inputBx">
+                            <input id="input-contacto2" name="mail" type="email" placeholder="Mail" required>
+                        </div>
+                        <div class="inputBx">
+                            <textarea id="input-contacto3" name="message" id="" placeholder="Escribe tu mensaje..." required></textarea>
+                        </div>
+                        <div class="inputBx">
+                            <input class="button-enviar-form" type="submit" value="Enviar">
+                        </div>
+                        <p data-section="form" data-value="Brevedad" class="text-form">Respondemos a la brevedad</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="container-info3" class="glass container-info desaparecer-container-info-up"><i id="cross3" class="fas fa-times"></i></div>
     </main>
     <footer id="main-footer">
         <div class="footer-content">
@@ -54,30 +78,6 @@
     </footer>
     <script src="script.js"></script>
     <script src="header.js"></script>
-    <script>
-        // Typing animation for About section
-const typingText = document.getElementById('typing-text');
-const textToType = "Hello! I'm a passionate web developer with a keen interest in creating innovative and user-friendly digital experiences. With a strong foundation in front-end technologies and a growing expertise in back-end development, I'm always eager to take on new challenges and push the boundaries of what's possible on the web. I'm currently seeking opportunities to collaborate on exciting projects that make a positive impact. Whether it's a startup looking for a dedicated developer or an established company in need of fresh perspectives, I'm ready to bring my skills and enthusiasm to the table.";
-
-let charIndex = 0;
-
-function typeText() {
-    if (charIndex < textToType.length) {
-        typingText.innerHTML += textToType.charAt(charIndex);
-        charIndex++;
-        setTimeout(typeText, 50);
-    }
-}// Start typing animation when About section becomes active
-const aboutSection = document.getElementById('container-info1');
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting && charIndex === 0) {
-            typeText();
-        }
-    });
-}, { threshold: 0.5 });
-
-observer.observe(aboutSection);
-    </script>
+    <script src="typing.js"></script>
 </body>
 </html>

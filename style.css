@@ -1,3 +1,28 @@
+/***************************************************************************************************/
+/* Estilos generales para el scrollbar */
+::-webkit-scrollbar {
+    width: 12px; 
+}
+/* Estilos para el track (fondo del scrollbar) */
+::-webkit-scrollbar-track {
+    background: linear-gradient(#fff2, transparent); 
+    border-radius: 10px; 
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 25px rgba(0, 0, 0, 0.25); 
+}
+/* Estilos para el thumb (la parte que se arrastra) */
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3); 
+    border-radius: 10px; 
+    backdrop-filter: blur(5px); 
+    border: 2px solid rgba(0, 0, 0, 0.4);
+    transition: background 0.3s ease-in-out; 
+}
+/* Hover sobre el thumb */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5); /* Color más claro al hacer hover */
+}
+/***************************************************************************************************/
 html,
 body {
     margin: 0;
@@ -5,35 +30,7 @@ body {
     overflow-x: hidden;
     background: #07090c;
 }
-
-/* Estilos generales para el scrollbar */
-::-webkit-scrollbar {
-    width: 12px; /* Ancho de la barra de desplazamiento */
-}
-
-/* Estilos para el track (fondo del scrollbar) */
-::-webkit-scrollbar-track {
-    background: linear-gradient(#fff2, transparent); /* Fondo translúcido */
-    border-radius: 10px; /* Bordes redondeados */
-    border: 1px solid rgba(255, 255, 255, 0.1); /* Borde suave */
-    box-shadow: 0 25px 25px rgba(0, 0, 0, 0.25); /* Sombra similar a tu clase glass */
-}
-
-/* Estilos para el thumb (la parte que se arrastra) */
-::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.3); /* Color translúcido */
-    border-radius: 10px; /* Bordes redondeados */
-    backdrop-filter: blur(5px); /* Efecto de desenfoque en el thumb */
-    border: 2px solid rgba(0, 0, 0, 0.4); /* Borde más oscuro */
-    transition: background 0.3s ease-in-out; /* Transición suave en el color */
-}
-
-/* Hover sobre el thumb */
-::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.5); /* Color más claro al hacer hover */
-}
-
-
+/***************************************************************************************************/
 main{
     display: flex;
     align-items: center;
@@ -100,8 +97,35 @@ h2{
     z-index: 10;
     width: 10%;
     right: 2%;
+    animation: movement 3s ease-in-out infinite;
+}
+
+.inidicador1{
+    font-size: 0.5em;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 4px;
+    white-space: nowrap;
+    position: absolute;
+    left: 1%;
+    z-index: 10;
+    margin-top: 5%;
     animation: movement 3s ease-in-out infinite; 
 }
+
+.inidicador2{
+    font-size: 0.5em;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 4px;
+    white-space: nowrap;
+    position: absolute;
+    right: 1%;
+    z-index: 10;
+    margin-top: 5%;
+    animation: movement 3s ease-in-out infinite;
+}
+
 
 @keyframes movement {
     0% {
@@ -162,7 +186,14 @@ h2{
 
 #container-info2{
     right: 2%;
-    width: 30%!important;
+}
+
+#container-info3{
+    width: 80%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Cuando el mouse está sobre el área izquierda */
@@ -177,6 +208,10 @@ h2{
     opacity: 1;
 }
 
+.center{
+    transform: translateY(0); /* Muestra el div en su posición */
+    opacity: 1;
+}
 
 /* Desaparecer hacia la izquierda */
 .desaparecer-container-info-left {
@@ -187,6 +222,11 @@ h2{
 /* Desaparecer hacia la derecha */
 .desaparecer-container-info-right {
     transform: translateX(100%); /* Desaparece hacia la derecha */
+    opacity: 0;
+}
+
+.desaparecer-container-info-up {
+    transform: translateY(-100%); /* Desaparece hacia la derecha */
     opacity: 0;
 }
 
@@ -207,7 +247,123 @@ h2{
     cursor: pointer;
 }
 
+#cross3{
+    position: absolute;
+    right: -1%;
+    top: 2%;
+    width: 5%;
+    cursor: pointer;
+}
 
+/** CONTACTO **/
+
+.container2{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.form2{
+    margin-top: 5%;
+    position: relative;
+    width: 120%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form2 h2{
+    position: relative;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.3em;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 10px;
+    text-align: center;
+    white-space: nowrap;
+    transition: text-shadow 0.3s ease;
+    margin-bottom: 10px;
+}
+
+ .form2 .inputBx{
+    width: 100%;
+    margin-top: 10px;
+ }
+
+ .form2 .inputBx input{
+     width: 90%;
+     background: rgba(255,255,255,0.2);
+     border: none;
+     outline: none;
+     padding: 5px 10px;
+     border-radius: 35px;
+     border: 1px solid rgb(255,255,255,0.5);
+     border-right: 1px solid rgb(255,255,255,0.2);
+     border-bottom: 1px solid rgb(255,255,255,0.2);
+     font-size: 16px;
+     letter-spacing: 1px;
+     color: #fff;
+     box-shadow: 0 5px 15px rgb(0,0,0,0.05);
+     cursor: pointer;
+ }
+
+ .form2 .inputBx textarea{
+    width: 90%;
+    height: 140px;
+    resize: none;
+    background: rgba(255,255,255,0.2);
+    border: none;
+    outline: none;
+    padding: 10px 12px;
+    border-radius: 15px;
+    border: 1px solid rgb(255,255,255,0.5);
+    border-right: 1px solid rgb(255,255,255,0.2);
+    border-bottom: 1px solid rgb(255,255,255,0.2);
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #fff !important;
+    box-shadow: 0 5px 15px rgb(0,0,0,0.05);
+}
+
+.form2 .inputBx input::placeholder{
+    color: #fff;
+        font-family: 'Poppins';
+}
+
+.form2 .inputBx textarea::placeholder{
+    color: #fff;
+    font-family: 'Poppins';
+}
+
+
+.form2 .inputBx input[type="submit"]{
+    width: 100%;
+}
+
+.form2 .inputBx input[type="submit"]:hover{
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    font-weight: 600;
+}
+
+.text-form{
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    color: #fff;
+}
+
+
+
+/*****************************************************************************************************************************************/
+/*****************************************************************************************************************************************/
+/*****************************************************************************************************************************************/
+/*HEADER*/
 #main-header {
     position: fixed;
     top: 0;
@@ -305,9 +461,9 @@ h2{
     top: 8px;
     transform: rotate(-135deg);
 }
-
-
-/*************************************************************************************************/
+/*****************************************************************************************************************************************/
+/*****************************************************************************************************************************************/
+/*FOOTER*/
 footer {
     position: absolute;
     width: 100%;
@@ -365,15 +521,14 @@ footer {
 }
 
 /***************************************************************************************************************************************/
+/*****************************************************************************************************************************************/
+/*****************************************************************************************************************************************/
 
 @media (max-width: 1020px) {
-
 
     h1{
         animation: growTitle2 3s ease forwards; 
     }
-
-
 
     @keyframes growTitle2 {
         0% {
@@ -405,12 +560,24 @@ footer {
         width: 90%!important;
     }
 
+    #container-info3{
+        margin-top: 4800px!important;
+        width: 90%!important;
+        opacity: 1;
+        
+    }
+
     #cross1{
         opacity: 0;
         z-index: -10;
     }
     
     #cross2{
+        opacity: 0;
+        z-index: -10;
+    }
+
+    #cross3{
         opacity: 0;
         z-index: -10;
     }
@@ -422,7 +589,8 @@ footer {
         backdrop-filter: blur(10px);
         border-radius: 10px;
     }
-
+/*****************************************************************************************************************************************/
+/*****************************************************************************************************************************************/
     .burger-menu {
         display: block;
         margin-top: 5%;
@@ -453,9 +621,10 @@ footer {
         padding: 15px;
         text-align: center;
     }
-
+/*****************************************************************************************************************************************/
+/*****************************************************************************************************************************************/
     footer {
-        margin-top: 1300px;
+        margin-top: 1850px;
     }
 
     .footer-content {

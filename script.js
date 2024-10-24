@@ -8,9 +8,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const botonnewsletter = document.getElementById('buttom-newsletter');
     const linksmedia = document.querySelectorAll('#social-media a');
     const abouttitle = document.getElementById('about-tittle');
+    const contactttitle = document.getElementById('contact-tittle');
     const containerInfo1 = document.getElementById('container-info1');
     const containerInfo2 = document.getElementById('container-info2');
-    
+    const containerInfo3 = document.getElementById('container-info3');
+    const indicador1 = document.getElementById('inidicador1');
+    const indicador2 = document.getElementById('inidicador2');
+
+
 
     function resizeCanvas() {
         canvas.width = window.innerWidth;
@@ -113,12 +118,18 @@ document.addEventListener('DOMContentLoaded', () => {
             0 0 20px rgb(${color.r}, ${color.g}, ${color.b}),
             0 0 30px rgb(${color.r}, ${color.g}, ${color.b})
         `;
+        contactttitle.style.textShadow = `
+        0 0 10px rgb(${color.r}, ${color.g}, ${color.b}),
+        0 0 20px rgb(${color.r}, ${color.g}, ${color.b}),
+        0 0 30px rgb(${color.r}, ${color.g}, ${color.b})
+    `;
         header.style.filter = `drop-shadow(2px 2px 10px rgb(${color.r}, ${color.g}, ${color.b}))`;
         containerInfo1.style.filter = `drop-shadow(2px 2px 10px rgb(${color.r}, ${color.g}, ${color.b}))`;
         containerInfo2.style.filter = `drop-shadow(2px 2px 10px rgb(${color.r}, ${color.g}, ${color.b}))`;
-        if (window.innerWidth > 1020) {
-            footer.style.filter = `drop-shadow(2px 2px 10px rgb(${color.r}, ${color.g}, ${color.b}))`;
-        }
+        containerInfo3.style.filter = `drop-shadow(2px 2px 10px rgb(${color.r}, ${color.g}, ${color.b}))`;
+        indicador1.style.filter = `drop-shadow(2px 2px 10px rgb(${color.r}, ${color.g}, ${color.b}))`;
+        indicador2.style.filter = `drop-shadow(2px 2px 10px rgb(${color.r}, ${color.g}, ${color.b}))`;
+        footer.style.filter = `drop-shadow(2px 2px 10px rgb(${color.r}, ${color.g}, ${color.b}))`;
         botonnewsletter.style.background = `rgb(${color.r}, ${color.g}, ${color.b})`;
 
         linksmedia.forEach(linkmedia => {
