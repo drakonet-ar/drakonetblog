@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
     <header id="main-header" class="hidden">
@@ -31,7 +32,9 @@
         <div class="content">
             <h1>DRAKONET</h1>
         </div>
-        <div id="container-info1" class="glass container-info appear-container"><i id="cross1" class="fas fa-times"></i></div>
+        <i id="flecha1" class="fas fa-chevron-right flecha1"></i>
+        <i id="flecha2" class="fas fa-chevron-left flecha2"></i>
+        <div id="container-info1" class="glass container-info appear-container"><i id="cross1" class="fas fa-times"></i><h2 id="about-tittle">About Us</h2><p id="typing-text"></p></div>
         <div id="container-info2" class="glass container-info appear-container"><i id="cross2" class="fas fa-times"></i></div>
     </main>
     <footer id="main-footer">
@@ -49,7 +52,32 @@
             </form>
         </div>
     </footer>
-    <script src="script6.js"></script>
+    <script src="script.js"></script>
     <script src="header.js"></script>
+    <script>
+        // Typing animation for About section
+const typingText = document.getElementById('typing-text');
+const textToType = "Hello! I'm a passionate web developer with a keen interest in creating innovative and user-friendly digital experiences. With a strong foundation in front-end technologies and a growing expertise in back-end development, I'm always eager to take on new challenges and push the boundaries of what's possible on the web. I'm currently seeking opportunities to collaborate on exciting projects that make a positive impact. Whether it's a startup looking for a dedicated developer or an established company in need of fresh perspectives, I'm ready to bring my skills and enthusiasm to the table.";
+
+let charIndex = 0;
+
+function typeText() {
+    if (charIndex < textToType.length) {
+        typingText.innerHTML += textToType.charAt(charIndex);
+        charIndex++;
+        setTimeout(typeText, 50);
+    }
+}// Start typing animation when About section becomes active
+const aboutSection = document.getElementById('container-info1');
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting && charIndex === 0) {
+            typeText();
+        }
+    });
+}, { threshold: 0.5 });
+
+observer.observe(aboutSection);
+    </script>
 </body>
 </html>

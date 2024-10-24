@@ -105,6 +105,19 @@ const content = document.querySelector('.content');
                 const containerInfo2 = document.getElementById('container-info2');
                 const leftBoundary = screenWidth * 0.1; // 20% de la pantalla desde la izquierda
                 const rightBoundary = screenWidth * 0.9; // 20% de la pantalla desde la derecha
+                const flecha1  = document.getElementById('flecha1');
+                const flecha2  = document.getElementById('flecha2');
+
+                if(!containerInfo1.classList.contains('desaparecer-container-info-left')){
+                    flecha1.style.opacity = '0';
+                }else{
+                    flecha1.style.opacity = '1';
+                }
+                if(!containerInfo2.classList.contains('desaparecer-container-info-right')){
+                    flecha2.style.opacity = '0';
+                }else{
+                    flecha2.style.opacity = '1';
+                }
             
                 linkabout.addEventListener('click', function() {
                     if(containerInfo1.classList.contains('desaparecer-container-info-left')){
@@ -260,8 +273,7 @@ if (window.innerWidth <= 1020) {
     const containerInfo2 = document.getElementById('container-info2');
 
     // Ajuste en píxeles para el scroll
-    const offset = 100; // Cambia este valor según sea necesario
-    const offset2 = 2000;
+    const offset = 80; // Cambia este valor según sea necesario
     // Función para hacer scroll suave con ajuste
     function smoothScroll(target) {
         const targetPosition = target.getBoundingClientRect().top + window.scrollY - offset;
